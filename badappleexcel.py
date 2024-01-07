@@ -16,7 +16,7 @@ def img_to_excel(files):
     wb4 = openpyxl.Workbook()
     ws4 = wb4.active
     #sheet name = frame number
-    #ws4.title = f"{str(i).zfill(4)}"
+    ws4.title = f"{files[-8:-4]}"
 
     #convert BGR (wtf opncv) val to hex and append to a list
     image_hex3 = []
@@ -48,7 +48,7 @@ def img_to_excel(files):
         ws4.column_dimensions[f"{openpyxl.utils.get_column_letter(cols+1)}"].width = 2.14
 
     #save to /frames/ directory (gitignore)
-    wb4.save(f"C:/Users/ACER/Documents/GitHub/bad-apple-excel/frames/{files}.xlsx")
+    wb4.save(f"C:/Users/ACER/Documents/GitHub/bad-apple-excel/frames/{files[-8:-4]}.xlsx")
 
 start = time.time()
 
